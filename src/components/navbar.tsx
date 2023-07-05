@@ -9,8 +9,8 @@ export default function Navbar() {
         { label: 'Nosotros', href: '/nosotros' }
     ]
     return (
-        <nav className="bg-teal-500 p-6">
-            <button className="lg:hidden fixed top-2 right-0 p-4 text-white" 
+        <nav className="relative p-6 lg:border-b">
+            <button className="lg:hidden absolute top-2 right-0 p-4" 
                 onClick={() => setIsMenuOpen(!isMenuOpen)} >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
@@ -19,7 +19,7 @@ export default function Navbar() {
                 </svg>
             </button>
             <div className={`lg:flex items-center justify-between flex-wrap`}>
-                <div className="flex items-center flex-shrink-0 text-white mr-6">
+                <div className="flex items-center flex-shrink-0 mr-6">
                     <span className="font-semibold text-xl tracking-tight">FUNCOMARE</span>
                 </div>
                 <div className={`${!isMenuOpen ? 'hidden' : ''} block lg:flex lg:items-center lg:w-auto`}>
@@ -27,7 +27,7 @@ export default function Navbar() {
                         <a
                             key={href}
                             href={href}
-                            className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+                            className="block mt-4 lg:inline-block lg:mt-0 hover:text-blue-400 mr-4"
                         >
                             {label}
                         </a>
