@@ -1,6 +1,7 @@
 import Navbar from '@/components/navbar'
 import './globals.css'
 import { Inter } from 'next/font/google'
+import Footer from '@/components/footer'
 
 
 export const metadata = {
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body className="overflow-y-auto">
         <Navbar/>
         {children}
+        <Footer/>
       </body>
     </html>
   )

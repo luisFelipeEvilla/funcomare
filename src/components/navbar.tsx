@@ -11,7 +11,7 @@ export default function Navbar() {
     ]
     return (
         <nav className="relative py-2 lg:border-b">
-            <button className="lg:hidden absolute top-2 right-0 p-4" 
+            <button className="lg:hidden absolute top-2 right-0 p-4"
                 onClick={() => setIsMenuOpen(!isMenuOpen)} >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
@@ -21,7 +21,7 @@ export default function Navbar() {
             </button>
             <div className={`lg:flex justify-between flex-wrap items-center`}>
                 <div className="mr-6">
-                    <Image 
+                    <Image
                         className="w-[70px] h-[50px] lg:w-[100px] lg:h-[60px] object-fit"
                         src="/images/logo.png"
                         width={100}
@@ -31,7 +31,7 @@ export default function Navbar() {
                 </div>
                 <div className={`${!isMenuOpen ? 'hidden' : ''} 
                     block w-full h-screen
-                    lg:flex lg:items-center lg:w-auto`}>
+                    lg:h-fit lg:flex  lg:items-center lg:w-auto`}>
                     {links.map(({ label, href }) => (
                         <a
                             key={href}
