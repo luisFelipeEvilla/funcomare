@@ -1,12 +1,13 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import { FaHome } from "react-icons/fa";
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const links = [
-        { label: 'Inicio', href: '/' },
+        { label: 'Inicio', href: '/', icon: FaHome },
         { label: 'Nosotros', href: '/nosotros' }
     ]
     return (
@@ -32,13 +33,14 @@ export default function Navbar() {
                 <div className={`${!isMenuOpen ? 'hidden' : ''} 
                     block w-full h-screen
                     lg:h-fit lg:flex  lg:items-center lg:w-auto`}>
-                    {links.map(({ label, href }) => (
+                    {links.map((link) => (
                         <a
-                            key={href}
-                            href={href}
-                            className="text-center text-xl block lg:inline-block lg:mt-0 hover:text-blue-400 mr-4"
-                        >
-                            {label}
+                            key={link.href}
+                            href={link.href}
+                            className="text-center text-xl lg:inline-block lg:mt-0 hover:text-blue-400 mr-4"
+                        >   
+                            { link.icon && <link.icon className="inline-block mr-2"/>}                        
+                            {link.label}
                         </a>
                     ))}
                 </div>

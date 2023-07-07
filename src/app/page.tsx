@@ -3,7 +3,7 @@ import { FaPhone } from 'react-icons/fa'
 
 export default function Home() {
   return (
-    <div className="grid gap-3 py-4 px-2 ">
+    <div className="grid gap-10 py-8 px-2 ">
       <main>
         <div className="flex flex-col mx-auto items-center mt-4">
           <div className='relative'>
@@ -24,8 +24,8 @@ export default function Home() {
         </div>
       </main>
 
-      <section className='grid gap-2'>
-        <h2 className='text-xl font-bold'>¿Quienes somos?</h2>
+      <section className='grid gap-2 px-4'>
+        <h2 className='text-xl font-bold text-blue-500'>¿Quienes somos?</h2>
         <p className='text-lg'> Somos una fundación sin ánimo de lucro que busca mejorar la calidad de vida de las personas a
           través de la educación, la cultura y el deporte. Apostamos el futuro de la niñez y todo lo que estos tienen para
           aportar a nuestra sociedad
@@ -33,12 +33,14 @@ export default function Home() {
       </section>
 
       <section className='flex flex-col gap-4 items-center'>
-        <div className='grid gap-2 border rounded-md shadow-md p-4'>
-          <h2 className='text-xl font-bold text-center'>¿Como puedo involucrarme?</h2>
-          <p className='text-lg'>
-            Puedes involucrarte con nosotros a través de donaciones o trabjando en conjunto para brindarle un mejor futuro a los niños.
-            <a href="tel:+57302123456" className='flex gap-2 items-center'><FaPhone className='text-blue-500' />(+57) 302-123-456 </a>
-          </p>
+        <div className='grid gap-2 border rounded-md shadow-md p-4 max-w-[800px]'>
+          <h2 className='text-xl font-bold text-center text-blue-500'>¿Como puedo involucrarme?</h2>
+          <div>
+            <p className='text-lg'>
+              Puedes involucrarte con nosotros a través de donaciones o trabjando en conjunto para brindarle un mejor futuro para los niños.
+              <a href="tel:+57302123456" className='flex w-fit gap-2 items-center '><FaPhone className='text-blue-500' />(+57) 302-123-456 </a>
+            </p>
+          </div>
         </div>
 
         <form className='grid gap-3  border-2 shadow-md rounded-md p-4 lg:p-6 max-w-[700px]'>
