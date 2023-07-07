@@ -8,15 +8,15 @@ export default function Footer() {
     ]
 
     return (
-        <footer className="flex flex-wrap gap-8 items-center justify-around text-white p-4 bg-[#1e4664]">
-            <div className='max-w-[250px]'>
+        <footer className="flex flex-col-reverse lg:flex-row flex-wrap gap-8 items-center justify-around text-white p-4 bg-[#1e4664]">
+            <div className='grid gap-2 max-w-[250px]'>
+                <a href='tel:+57302123456' className='flex items-center'>
+                    <FaPhone className='mr-2' /> <p>(+57) 302-123-456</p>
+                </a>
+                <a href='tel:+57302123456' className='flex items-center'>
+                    <FaMailBulk className='mr-2' /> <p>funcomare@gmail.com</p>
+                </a>
                 <p> © {new Date().getFullYear()} FUNCOMARE. Todos los derechos reservados</p>
-                <a href='tel:+57302123456' className='flex items-center'>
-                    <FaPhone className='mr-2'/> <p>(+57) 302-123-456</p>
-                </a>
-                <a href='tel:+57302123456' className='flex items-center'>
-                    <FaMailBulk className='mr-2'/> <p>funcomare@gmail.com</p>
-                </a>
             </div>
             <div>
                 <iframe
@@ -32,7 +32,7 @@ export default function Footer() {
                 {
                     links.map(({ href, icon }) => (
                         <a key={href} href={href}
-                            className="mr-4 text-2xl"
+                            className="mr-4 text-3xl"
                         >
                             {icon}
                         </a>
