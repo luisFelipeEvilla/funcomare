@@ -8,7 +8,9 @@ export default function Navbar() {
 
     const links = [
         { label: 'Inicio', href: '/', icon: FaHome },
-        { label: 'Misión', href: '/mission' }
+        { label: 'Misión', href: '/mission' },
+        { label: 'Visión', href: '/vission' },
+        { label: 'Fundadores', href: '/founders' },
     ]
     return (
         <nav className="relative py-2 lg:border-b">
@@ -31,16 +33,19 @@ export default function Navbar() {
                     />
                 </a>
                 <div className={`${!isMenuOpen ? 'hidden' : ''} 
-                    block w-full h-screen
-                    lg:h-fit lg:flex  lg:items-center lg:w-auto`}>
+                    flex flex-col gap-2 w-full h-screen
+                    lg:h-fit lg:flex lg:flex-row lg:items-center lg:w-auto
+                    `}>
                     {links.map((link) => (
                         <a
                             key={link.href}
                             href={link.href}
-                            className="text-center text-xl block lg:mt-0 hover:text-blue-400 mr-4"
+                            className={`
+                            border-b text-center flex items-center justify-center text-2xl hover:text-blue-400 mr-4 pb-2
+                            lg:mt-0 lg:border-b-0 `}
                         >   
                             { link.icon && <link.icon className="inline-block mr-2"/>}                        
-                            {link.label}
+                            <p>{link.label}</p>
                         </a>
                     ))}
                 </div>
