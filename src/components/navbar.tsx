@@ -8,7 +8,7 @@ export default function Navbar() {
 
     const links = [
         { label: 'Inicio', href: '/', icon: FaHome },
-        { label: 'Nosotros', href: '/nosotros' }
+        { label: 'Misión', href: '/mission' }
     ]
     return (
         <nav className="relative py-2 lg:border-b">
@@ -21,7 +21,7 @@ export default function Navbar() {
                 </svg>
             </button>
             <div className={`lg:flex justify-between flex-wrap items-center`}>
-                <div className="mr-6">
+                <a href="/" className="mr-6">
                     <Image
                         className="w-[70px] h-[50px] lg:w-[100px] lg:h-[60px] object-fit"
                         src="/images/logo.png"
@@ -29,7 +29,7 @@ export default function Navbar() {
                         height={50}
                         alt="FUNCOMARE"
                     />
-                </div>
+                </a>
                 <div className={`${!isMenuOpen ? 'hidden' : ''} 
                     block w-full h-screen
                     lg:h-fit lg:flex  lg:items-center lg:w-auto`}>
@@ -37,7 +37,7 @@ export default function Navbar() {
                         <a
                             key={link.href}
                             href={link.href}
-                            className="text-center text-xl lg:inline-block lg:mt-0 hover:text-blue-400 mr-4"
+                            className="text-center text-xl block lg:mt-0 hover:text-blue-400 mr-4"
                         >   
                             { link.icon && <link.icon className="inline-block mr-2"/>}                        
                             {link.label}
