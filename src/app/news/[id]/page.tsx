@@ -23,7 +23,7 @@ export default function Page({ params }: { params: { id: string } }) {
             >
                 {
                     new_.images.map((img, index) => (
-                        <div>
+                        <div key={index}>
                             <img
                                 key={index}
                                 src={img}
