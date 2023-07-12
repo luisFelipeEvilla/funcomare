@@ -11,6 +11,7 @@ export default function Navbar() {
         { label: 'Misión', href: '/mission' },
         { label: 'Visión', href: '/vission' },
         { label: 'Fundadores', href: '/founders' },
+        { label: 'Noticias', href: '/news' },
     ]
     return (
         <nav className="relative py-2 lg:border-b">
