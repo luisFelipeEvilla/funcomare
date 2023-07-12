@@ -1,4 +1,5 @@
-import { PHONE_NUMBER } from '@/config'
+import ContactForm from '@/components/contactForm';
+import { EMAIL, PHONE_NUMBER } from '@/config'
 import Image from 'next/image'
 import { FaPhone } from 'react-icons/fa'
 
@@ -43,34 +44,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-
-        <form className='grid gap-3  border-2 shadow-md rounded-md p-4 lg:p-6 max-w-[700px]'>
-          <div className='flex gap-2'>
-            <label className='w-[60px]' htmlFor='name'>Nombre</label>
-            <input type='text' placeholder='' name="name"
-              className='border px-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400'
-            />
-          </div>
-
-          <div className='flex gap-2'>
-            <label className='w-[60px]' htmlFor='subject'>Asunto</label>
-            <input type="text" placeholder='' name="subject"
-              className='border px-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400'
-            />
-          </div>
-
-          <div className='grid gap-2'>
-            <label htmlFor='description'>Describe brevemente como podemos ayudarte</label>
-            <textarea
-              placeholder='¿Como podemos ayudarte?'
-              className='border px-2 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400'
-            />
-          </div>
-
-          <button className='border rounded-md bg-blue-500 text-white px-4 py-2'>
-            Enviar
-          </button>
-        </form>
+        <ContactForm />
       </section>
     </div>
   )
