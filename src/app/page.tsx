@@ -3,8 +3,8 @@ import { FaPhone } from 'react-icons/fa'
 
 export default function Home() {
   return (
-    <div className="grid gap-10 py-8 px-2 ">
-      <main>
+    <div className="grid justify-center max-w-[1000px] mx-auto gap-10 py-8 px-2 ">
+      <main className=''>
         <div className="flex flex-col mx-auto items-center mt-4">
           <div className='relative'>
             <Image

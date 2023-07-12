@@ -26,7 +26,7 @@ export default function Navbar() {
             <div className={`lg:flex justify-between flex-wrap items-center`}>
                 <a href="/" className="mr-6">
                     <Image
-                        className="w-[70px] h-[50px] lg:w-[100px] lg:h-[60px] object-fit"
+                        className="w-[70px] h-[50px] lg:w-[90px] lg:h-[50px] object-fit"
                         src="/images/logo.png"
                         width={100}
                         height={50}
@@ -43,7 +43,7 @@ export default function Navbar() {
                             href={link.href}
                             className={`
                             border-b text-center flex items-center justify-center text-2xl hover:text-blue-400 mr-4 pb-2
-                            lg:mt-0 lg:border-b-0 `}
+                            lg:mt-0 lg:border-b-0 lg:text-lg`}
                         >   
                             { link.icon && <link.icon className="inline-block mr-2"/>}                        
                             <p>{link.label}</p>
