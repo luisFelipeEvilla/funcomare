@@ -1,3 +1,4 @@
+import { PHONE_NUMBER } from '@/config'
 import Image from 'next/image'
 import { FaPhone } from 'react-icons/fa'
 
@@ -38,7 +39,7 @@ export default function Home() {
           <div>
             <p className='text-lg'>
               Puedes involucrarte con nosotros a través de donaciones o trabjando en conjunto para brindarle un mejor futuro para los niños.
-              <a href="tel:+57302123456" className='flex w-fit gap-2 items-center '><FaPhone className='text-blue-500' />(+57) 301-561-6183 </a>
+              <a href={`tel:+57${PHONE_NUMBER}`} className='flex w-fit gap-2 items-center '><FaPhone className='text-blue-500' />(+57) 301-561-6183 </a>
             </p>
           </div>
         </div>

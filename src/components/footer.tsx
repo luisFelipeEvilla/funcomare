@@ -1,3 +1,4 @@
+import { PHONE_NUMBER } from '@/config';
 import { FaFacebook, FaInstagram, FaMailBulk, FaPhone, FaTwitter } from 'react-icons/fa'
 
 const links = [
@@ -9,10 +10,10 @@ const links = [
 export const Footer = () => (
     <footer className="shrink-0 flex flex-col-reverse lg:flex-row flex-wrap gap-8 items-center justify-around text-white p-4 bg-[#1e4664]">
         <div className='grid gap-2 max-w-[250px]'>
-            <a href='tel:+57302123456' className='flex items-center'>
+            <a href={`tel:+57${PHONE_NUMBER}`} className='flex items-center'>
                 <FaPhone className='mr-2' /> <p>(+57) 301-561-6183</p>
             </a>
-            <a href='tel:+57302123456' className='flex items-center'>
+            <a href={`mailto:funcamore@gmail.com`} className='flex items-center'>
                 <FaMailBulk className='mr-2' /> <p>funcomare@gmail.com</p>
             </a>
             <p> © {new Date().getFullYear()} FUNCOMARE. Todos los derechos reservados</p>
