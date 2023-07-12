@@ -5,17 +5,17 @@ const VissionPage = () => (
         <div className="grid gap-4 max-w-[500px]">
             <h1 className="text-3xl font-semibold text-blue-500">Nuestra Visión</h1>
             <p className="">
-                LA FUNDACION LA LUZ DE LA ESPERANZA  es una entidad sin ánimo de lucro con alta vocación
-                de servicio social , que trabaja en favor  de la vida reduciendo las condiciones de
-                vulnerabilidad de los niños, niñas, adolescentes y adulto mayor de nuestro municipio,
-                buscando el mejoramiento de la calidad de vida. Todo esto encaminado con procesos
-                educativos, sociales, culturales y recreativos.
+            La fundación tendrá como objeto, Intermediar en los procesos de formación 
+            técnica en programas de educación inicial, cultural, cívicas que posibilite 
+            proyectos en competencias ciudadanas, el trabajo y desarrollo humano, técnica
+            profesional y /o tecnológica en el campo social, ecológico, deportivo, educativo
+            y empresarial además en temas complementarios que requiera el escenario productivo.
             </p>
         </div>
 
         <div>
             <Image
-                src="/images/mission-banner.jpg"
+                src="/images/vission-banner.jpg"
                 width={500}
                 height={200}
                 alt="Misión"
