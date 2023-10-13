@@ -12,7 +12,7 @@ export default function Page({ params }: { params: { id: string } }) {
         <main className="grid gap-4 px-8 py-4 lg:py-8">
             <div className="grid gap-3">
                 <h1 className="text-center font-bold text-2xl">{new_.title}</h1>
-                <p>{new_.description}</p>
+                <p className="whitespace-pre-line">{new_.description}</p>
             </div>
 
 

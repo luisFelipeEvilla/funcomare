@@ -9,14 +9,14 @@ export default function Home() {
       <main className=''>
         <div className="flex flex-col mx-auto items-center mt-4">
           <div className='relative'>
-            <Image
-              className='w-full rounded lg:w-[1200px] lg:h-[550px] object-cover'
+            <img
+              className='w-full rounded lg:w-[1200px] lg:h-[550px] object-fit'
               src={'/images/hero-banner2.jpg'}
               width={500}
               height={500}
               alt={'hero'}
             />
-            <div className='absolute bottom-0 w-full text-white bg-slate-300  bg-opacity-60 py-3 px-2'>
+            <div className='absolute bottom-0 w-full text-white bg-slate-400  bg-opacity-60 py-3 px-2'>
               <h1 className="text-4xl font-bold mb-2">FUNCOMARE</h1>
               <p className="text-xl font-semibold">
                 Fundacion construyendo mejores aprendizajes para tu región
@@ -37,11 +37,11 @@ export default function Home() {
       <section className='flex flex-col gap-4 items-center'>
         <div className='grid gap-2 border rounded-md shadow-md p-4 max-w-[800px]'>
           <h2 className='text-xl font-bold text-center text-blue-500'>¿Como puedo involucrarme?</h2>
-          <div>
+          <div className='flex flex-col gap-2 items-center'>
             <p className='text-lg'>
-              Puedes involucrarte con nosotros a través de donaciones o trabjando en conjunto para brindarle un mejor futuro para los niños.
-              <a href={`tel:+57${PHONE_NUMBER}`} className='flex w-fit gap-2 items-center '><FaPhone className='text-blue-500' />(+57) 301-561-6183 </a>
+              Puedes involucrarte con nosotros a través de donaciones o trabajando en conjunto para brindarle un mejor futuro para todos.
             </p>
+            <a href={`tel:+57${PHONE_NUMBER}`} className='flex w-fit gap-2 items-center'><FaPhone className='text-blue-500' />(+57) 301-561-6183 </a>
           </div>
         </div>
         <ContactForm />

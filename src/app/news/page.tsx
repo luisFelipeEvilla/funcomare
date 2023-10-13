@@ -32,17 +32,17 @@ export default function News() {
 type newProp = { title: string, description: string, frontPage: string, createdAt: string, id: number }
 function New(props: newProp) {
     return (
-        <a href={`/news/${props.id}`} className="grid gap-2 w-[300px] rounded-md shadow-md overflow-hidden hover:scale-105">
+        <a href={`/news/${props.id}`} className="flex flex-col gap-2 w-[300px] h-[450px] rounded-md shadow-md overflow-hidden hover:scale-105">
             <img
                 src={props.frontPage}
                 className="object-cover h-[200px] w-full"
             />
             <div className="px-4 py-2">
-                <div className="">
+                <div className="overflow-hidden">
                     <h2 className="font-semibold text-lg inline">{props.title}</h2>
-                    <p className="text-sm font-light opacity-40">{props.createdAt}</p>
+                    {/* <p className="text-sm font-light opacity-40">{props.createdAt}</p> */}
                 </div>
-                <p className="text-sm max-h-[100px] text-ellipsis overflow-hidden">{props.description}</p>
+                <p className="text-sm max-h-[100px] text-ellipsis overflow-hidden mb-2">{props.description}</p>
             </div>
         </a>
     )
