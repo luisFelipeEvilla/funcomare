@@ -3,6 +3,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import Footer from "@/components/footer";
 import { Providers } from "./providers";
+import { quicksand } from "./fonts";
 
 export const metadata = {
   title: "FUNCOMARE",
@@ -17,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <Providers>
-        <body className="h-screen flex flex-col overflow-y-auto">
+        <body className={`${quicksand.className} bg-gray-100 h-screen flex flex-col overflow-y-auto`}>
           <CustomNavbar />
           <div className="flex-auto max-w-[1000px] mx-auto">{children}</div>
           <Footer />

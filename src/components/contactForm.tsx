@@ -29,7 +29,7 @@ export default function ContactForm() {
     };
 
     return (
-        <form className='grid gap-3  border-2 shadow-md rounded-md p-4 lg:p-6 max-w-[700px]' onSubmit={handleSubmit}>
+        <form className='grid gap-3  bg-white border-2 shadow-md rounded-md p-4 lg:p-6 max-w-[700px]' onSubmit={handleSubmit}>
             <div className='flex gap-2'>
                 <label className='w-[60px]' htmlFor='name'>Nombre</label>
                 <input type='text' placeholder='' name="name" ref={nameRef}

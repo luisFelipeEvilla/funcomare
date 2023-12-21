@@ -9,6 +9,7 @@ import { FaHandSparkles } from "react-icons/fa";
 import { FaGift } from "react-icons/fa";
 import { FaUserPlus } from "react-icons/fa";
 import { ReactElement } from "react";
+import { fontDmSerif } from "./fonts";
 
 export default function Home() {
   return (
@@ -31,71 +32,73 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="bg-gray-100 w-screen py-10">
-        <div className="grid md:grid-cols-2 gap-8 px-4 max-w-[1000px] mx-auto">
-          <div className="flex flex-col justify-center">
-            <h2 className="text-xl font-bold text-blue-500 text-center">
-              ¿Quienes somos?
-            </h2>
-            <p className="text-base">
-              Somos una fundación sin ánimo de lucro que busca mejorar la
-              calidad de vida de las personas a través de la educación, la
-              cultura y el deporte. Apostamos el futuro de la niñez y todo lo
-              que estos tienen para aportar a nuestra sociedad
-            </p>
-          </div>
+      <section className="grid md:grid-cols-2 gap-8 px-4 max-w-[1000px] mx-auto bg-gray-100 w-screen py-10">
+        <div className="flex flex-col justify-center">
+          <h2
+            className={`${fontDmSerif.className} text-xl font-bold text-blue-500 text-center`}
+          >
+            ¿Quienes somos?
+          </h2>
+          <p className="text-base">
+            Somos una fundación sin ánimo de lucro que busca mejorar la calidad
+            de vida de las personas a través de la educación, la cultura y el
+            deporte. Apostamos el futuro de la niñez y todo lo que estos tienen
+            para aportar a nuestra sociedad
+          </p>
+        </div>
 
-          <div className="grid md:grid-cols-2 gap-4 md:gap-8">
-            <Badget
-              title="Deja un legado"
-              content="Haz una donación para ayudar a las personas que más lo necesitan"
-              icon={<FaGift />}
-            />
+        <div className="grid md:grid-cols-2 gap-4 md:gap-8">
+          <Badget
+            title="Deja un legado"
+            content="Haz una donación para ayudar a las personas que más lo necesitan"
+            icon={<FaGift />}
+          />
 
-            <Badget
-              title="Haz una donación"
-              content="Haz una donación para ayudar a las personas que más lo necesitan"
-              icon={<MdOutlineVolunteerActivism />}
-            />
+          <Badget
+            title="Haz una donación"
+            content="Haz una donación para ayudar a las personas que más lo necesitan"
+            icon={<MdOutlineVolunteerActivism />}
+          />
 
-            <Badget
-              title="Sé voluntario"
-              content="Haz parte de nuestro equipo de voluntarios y ayuda a construir
+          <Badget
+            title="Sé voluntario"
+            content="Haz parte de nuestro equipo de voluntarios y ayuda a construir
               un mejor futuro"
-              icon={<FaHandSparkles />}
-            />
+            icon={<FaHandSparkles />}
+          />
 
-            <Badget
-              title="Conviertete en un representante"
-              content="Conviertete en un representante de la fundación en tu región"
-              icon={<FaUserPlus />}
-            />
+          <Badget
+            title="Conviertete en un representante"
+            content="Conviertete en un representante de la fundación en tu región"
+            icon={<FaUserPlus />}
+          />
+        </div>
+      </section>
+
+      <section className="w-screen bg-white   ">
+        <div className="max-w-[1024px] mx-auto flex flex-col gap-4 py-12">
+          <div className="text-center">
+            <h4 className="text-xl font-bold">Noticias importantes</h4>
+            <p>Echa un vistazo a algunos de nuestos eventos más recientes</p>
+          </div>
+
+          <div className="flex flex-col md:flex-row md:flex-wrap items-center justify-center gap-4">
+            {news.map((n, index) => (
+              <NewsCard
+                key={index}
+                id={n.id}
+                title={n.title}
+                description={n.description}
+                frontPage={n.frontPage}
+                createdAt={n.createdAt}
+              />
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="flex flex-col gap-4 py-12 max-w-[1024px] mx-auto">
-        <div className="text-center">
-          <h4 className="text-xl font-bold">Noticias importantes</h4>
-          <p>Echa un vistazo a algunos de nuestos eventos más recientes</p>
-        </div>
-
-        <div className="flex flex-col md:flex-row md:flex-wrap items-center justify-center gap-4">
-          {news.map((n, index) => (
-            <NewsCard
-              key={index}
-              id={n.id}
-              title={n.title}
-              description={n.description}
-              frontPage={n.frontPage}
-              createdAt={n.createdAt}
-            />
-          ))}
-        </div>
-      </section>
-
-      <section className="flex flex-col gap-4 items-center">
-        <div className="grid gap-2 border rounded-md shadow-md p-4 max-w-[800px]">
+      <section className="flex flex-col gap-4 items-center py-12">
+        <div className="bg-white grid gap-2 border rounded-md shadow-md p-4 max-w-[800px]">
           <h2 className="text-xl font-bold text-center text-blue-500">
             ¿Como puedo involucrarme?
           </h2>
@@ -115,8 +118,6 @@ export default function Home() {
         </div>
         <ContactForm />
       </section>
-
-      
     </div>
   );
 
@@ -128,10 +129,12 @@ export default function Home() {
     return (
       <div className="flex flex-col gap-1">
         <div className="flex flex-col items-center md:items-start">
-          <div className="bg-white rounded-full w-fit px-2 py-2">
+          <div className="bg-white rounded-full w-fit px-2 py-2 text-xl">
             {props.icon}
           </div>
-          <h4 className="font-semibold text-center md:text-left">
+          <h4
+            className={`${fontDmSerif.className} font-semibold text-center md:text-left`}
+          >
             {props.title}
           </h4>
         </div>

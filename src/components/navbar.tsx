@@ -10,6 +10,7 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
 } from "@nextui-org/react";
+import { quicksand } from "@/app/fonts";
 
 export default function CustomNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,7 +23,7 @@ export default function CustomNavbar() {
     { label: "Noticias", href: "/news" },
   ];
   return (
-    <Navbar position="static">
+    <Navbar position="static" className="bg-white " isBordered>
       <NavbarMenuToggle className="" />
       <NavbarContent
         className={`lg:flex justify-between flex-wrap items-center`}
@@ -45,8 +46,10 @@ export default function CustomNavbar() {
               key={link.href}
               href={link.href}
               className={`
-                              border-b text-center flex items-center justify-center text-2xl hover:text-blue-400 mr-4 pb-2
-                              lg:mt-0 lg:border-b-0 lg:text-lg`}
+                  border-b text-center flex items-center justify-center text-2xl hover:text-blue-400 mr-4 pb-2
+                  lg:mt-0 lg:border-b-0 lg:text-lg
+                  ${quicksand.className}  
+                `}
             >
               {link.icon && <link.icon className="inline-block mr-2" />}
               <p>{link.label}</p>
@@ -62,8 +65,9 @@ export default function CustomNavbar() {
               key={link.href}
               href={link.href}
               className={`
-                            border-b text-center flex items-center justify-center text-2xl hover:text-blue-400 mr-4 pb-2
-                            lg:mt-0 lg:border-b-0 lg:text-lg`}
+                ${quicksand.className}
+                text-center flex items-center justify-center text-2xl hover:text-blue-400 mr-4 pb-2
+                lg:mt-0 lg:border-b-0 lg:text-lg`}
             >
               {link.icon && <link.icon className="inline-block mr-2" />}
               <p>{link.label}</p>
