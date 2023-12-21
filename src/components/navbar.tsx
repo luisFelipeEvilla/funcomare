@@ -24,7 +24,7 @@ export default function CustomNavbar() {
   ];
   return (
     <Navbar position="static" className="bg-white " isBordered>
-      <NavbarMenuToggle className="" />
+      <NavbarMenuToggle className="lg:hidden" />
       <NavbarContent
         className={`lg:flex justify-between flex-wrap items-center`}
       >
@@ -66,7 +66,7 @@ export default function CustomNavbar() {
               href={link.href}
               className={`
                 ${quicksand.className}
-                text-center flex items-center justify-center text-2xl hover:text-blue-400 mr-4 pb-2
+                flex items-center text-2xl hover:text-blue-400 mr-4 pb-2
                 lg:mt-0 lg:border-b-0 lg:text-lg`}
             >
               {link.icon && <link.icon className="inline-block mr-2" />}
