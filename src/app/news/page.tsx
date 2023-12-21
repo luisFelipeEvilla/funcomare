@@ -1,3 +1,4 @@
+import NewsCard from "@/components/cards/NewsCard"
 import news from "@/data/news"
 
 export default function News() {
@@ -14,7 +15,7 @@ export default function News() {
             <div className="flex flex-wrap justify-center px-auto items-start mx-auto gap-6">
                 {
                     news.map((n, index) => (
-                        <New
+                        <NewsCard
                             key={index}
                             id={n.id}
                             title={n.title}
@@ -29,21 +30,4 @@ export default function News() {
     )
 }
 
-type newProp = { title: string, description: string, frontPage: string, createdAt: string, id: number }
-function New(props: newProp) {
-    return (
-        <a href={`/news/${props.id}`} className="flex flex-col gap-2 w-[300px] h-[450px] rounded-md shadow-md overflow-hidden hover:scale-105">
-            <img
-                src={props.frontPage}
-                className="object-cover h-[200px] w-full"
-            />
-            <div className="px-4 py-2">
-                <div className="overflow-hidden">
-                    <h2 className="font-semibold text-lg inline">{props.title}</h2>
-                    {/* <p className="text-sm font-light opacity-40">{props.createdAt}</p> */}
-                </div>
-                <p className="text-sm max-h-[100px] text-ellipsis overflow-hidden mb-2">{props.description}</p>
-            </div>
-        </a>
-    )
-}
+
