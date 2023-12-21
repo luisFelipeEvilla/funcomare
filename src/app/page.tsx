@@ -74,7 +74,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex flex-col gap-4 py-12">
+      <section className="flex flex-col gap-4 py-12 max-w-[1024px] mx-auto">
         <div className="text-center">
           <h4 className="text-xl font-bold">Noticias importantes</h4>
           <p>Echa un vistazo a algunos de nuestos eventos más recientes</p>
