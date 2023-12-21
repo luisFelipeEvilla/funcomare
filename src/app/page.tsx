@@ -31,7 +31,7 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="bg-gray-200 w-screen py-10">
+      <section className="bg-gray-100 w-screen py-10">
         <div className="grid md:grid-cols-2 gap-8 px-4 max-w-[1000px] mx-auto">
           <div className="flex flex-col justify-center">
             <h2 className="text-xl font-bold text-blue-500 text-center">
@@ -74,6 +74,26 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="flex flex-col gap-4 py-12">
+        <div className="text-center">
+          <h4 className="text-xl font-bold">Noticias importantes</h4>
+          <p>Echa un vistazo a algunos de nuestos eventos más recientes</p>
+        </div>
+
+        <div className="flex flex-col md:flex-row md:flex-wrap items-center justify-center gap-4">
+          {news.map((n, index) => (
+            <NewsCard
+              key={index}
+              id={n.id}
+              title={n.title}
+              description={n.description}
+              frontPage={n.frontPage}
+              createdAt={n.createdAt}
+            />
+          ))}
+        </div>
+      </section>
+
       <section className="flex flex-col gap-4 items-center">
         <div className="grid gap-2 border rounded-md shadow-md p-4 max-w-[800px]">
           <h2 className="text-xl font-bold text-center text-blue-500">
@@ -96,25 +116,7 @@ export default function Home() {
         <ContactForm />
       </section>
 
-      <section className="flex flex-col gap-4">
-        <div className="text-center">
-          <h4 className="text-xl font-bold">Noticias importantes</h4>
-          <p>Echa un vistazo a algunos de nuestos eventos más recientes</p>
-        </div>
-
-        <div className="flex flex-col md:flex-row md:flex-wrap items-center justify-center gap-4">
-          {news.map((n, index) => (
-            <NewsCard
-              key={index}
-              id={n.id}
-              title={n.title}
-              description={n.description}
-              frontPage={n.frontPage}
-              createdAt={n.createdAt}
-            />
-          ))}
-        </div>
-      </section>
+      
     </div>
   );
 
