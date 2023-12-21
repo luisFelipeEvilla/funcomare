@@ -1,3 +1,4 @@
+
 import CustomNavbar from "@/components/navbar";
 import "./globals.css";
 import { Inter } from "next/font/google";
@@ -17,13 +18,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <Providers>
-        <body className={`${quicksand.className} bg-gray-100 h-screen flex flex-col overflow-y-auto`}>
+      <body
+        className={`${quicksand.className} bg-gray-100 h-screen flex flex-col overflow-y-auto`}
+      >
+        <Providers>
           <CustomNavbar />
           <div className="flex-auto max-w-[1000px] mx-auto">{children}</div>
           <Footer />
-        </body>
-      </Providers>
+        </Providers>
+      </body>
     </html>
   );
 }
