@@ -6,6 +6,7 @@ import {
   Navbar,
   NavbarBrand,
   NavbarContent,
+  NavbarItem,
   NavbarMenu,
   NavbarMenuItem,
   NavbarMenuToggle,
@@ -41,28 +42,28 @@ export default function CustomNavbar() {
         </NavbarBrand>
 
         <NavbarContent className="hidden lg:flex ">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className={`
-                  border-b text-center flex items-center justify-center text-2xl hover:text-blue-400 mr-4 pb-2
-                  lg:mt-0 lg:border-b-0 lg:text-lg
-                  ${quicksand.className}  
-                `}
-            >
-              {link.icon && <link.icon className="inline-block mr-2" />}
-              <p>{link.label}</p>
-            </a>
+          {links.map((link, index) => (
+            <NavbarItem key={`navbar-item-${index}`}>
+              <a
+                href={link.href}
+                className={`
+              border-b text-center flex items-center justify-center text-2xl hover:text-blue-400 mr-4 pb-2
+              lg:mt-0 lg:border-b-0 lg:text-lg
+              ${quicksand.className}  
+              `}
+              >
+                {link.icon && <link.icon className="inline-block mr-2" />}
+                <p>{link.label}</p>
+              </a>
+            </NavbarItem>
           ))}
         </NavbarContent>
       </NavbarContent>
 
       <NavbarMenu>
-        {links.map((link) => (
-          <NavbarMenuItem>
+        {links.map((link, index) => (
+          <NavbarMenuItem key={`menu-item-${index}`}>
             <a
-              key={link.href}
               href={link.href}
               className={`
                 ${quicksand.className}
