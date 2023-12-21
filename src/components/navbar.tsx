@@ -22,8 +22,8 @@ export default function CustomNavbar() {
     { label: "Noticias", href: "/news" },
   ];
   return (
-    <Navbar>
-      <NavbarMenuToggle className="sm:hidden"/>
+    <Navbar position="static">
+      <NavbarMenuToggle className="" />
       <NavbarContent
         className={`lg:flex justify-between flex-wrap items-center`}
       >

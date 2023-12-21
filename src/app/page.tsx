@@ -4,17 +4,22 @@ import { EMAIL, PHONE_NUMBER } from "@/config";
 import news from "@/data/news";
 import Image from "next/image";
 import { FaPhone } from "react-icons/fa";
+import { MdOutlineVolunteerActivism } from "react-icons/md";
+import { FaHandSparkles } from "react-icons/fa";
+import { FaGift } from "react-icons/fa";
+import { FaUserPlus } from "react-icons/fa";
+import { ReactElement } from "react";
 
 export default function Home() {
   return (
-    <div className="grid justify-center max-w-[1000px] mx-auto gap-10 py-8 px-2 ">
-      <div className="flex flex-col items-center mt-4 h-screen md:h-[400px] lg:h-[500px]">
+    <div className="grid justify-center max-w-[1000px] mx-auto">
+      <div className="relative flex flex-col items-center w-screen h-[400px] md:h-[400px] lg:h-[600px]">
         <div className="absolute top-0">
           <img
-            className="w-screen  h-screen md:h-[400px] lg:h-[600px]"
+            className="w-screen object-fill h-[400px] md:h-[400px] lg:h-[600px]"
             src={"/images/pexels-edwin-guzman-13722651.jpg"}
             width={500}
-            height={500}
+            height={300}
             alt={"hero"}
           />
           {/* <div className='absolute bottom-0 w-full text-white bg-slate-400  bg-opacity-60 py-3 px-2'>
@@ -26,14 +31,47 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="grid gap-2 px-4">
-        <h2 className="text-xl font-bold text-blue-500">¿Quienes somos?</h2>
-        <p className="text-base">
-          Somos una fundación sin ánimo de lucro que busca mejorar la calidad de
-          vida de las personas a través de la educación, la cultura y el
-          deporte. Apostamos el futuro de la niñez y todo lo que estos tienen
-          para aportar a nuestra sociedad
-        </p>
+      <section className="bg-gray-200 w-screen py-10">
+        <div className="grid md:grid-cols-2 gap-8 px-4 max-w-[1000px] mx-auto">
+          <div className="flex flex-col justify-center">
+            <h2 className="text-xl font-bold text-blue-500 text-center">
+              ¿Quienes somos?
+            </h2>
+            <p className="text-base">
+              Somos una fundación sin ánimo de lucro que busca mejorar la
+              calidad de vida de las personas a través de la educación, la
+              cultura y el deporte. Apostamos el futuro de la niñez y todo lo
+              que estos tienen para aportar a nuestra sociedad
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-4 md:gap-8">
+            <Badget
+              title="Deja un legado"
+              content="Haz una donación para ayudar a las personas que más lo necesitan"
+              icon={<FaGift />}
+            />
+
+            <Badget
+              title="Haz una donación"
+              content="Haz una donación para ayudar a las personas que más lo necesitan"
+              icon={<MdOutlineVolunteerActivism />}
+            />
+
+            <Badget
+              title="Sé voluntario"
+              content="Haz parte de nuestro equipo de voluntarios y ayuda a construir
+              un mejor futuro"
+              icon={<FaHandSparkles />}
+            />
+
+            <Badget
+              title="Conviertete en un representante"
+              content="Conviertete en un representante de la fundación en tu región"
+              icon={<FaUserPlus />}
+            />
+          </div>
+        </div>
       </section>
 
       <section className="flex flex-col gap-4 items-center">
@@ -79,4 +117,24 @@ export default function Home() {
       </section>
     </div>
   );
+
+  function Badget(props: {
+    icon: ReactElement;
+    title: string;
+    content: string;
+  }) {
+    return (
+      <div className="flex flex-col gap-1">
+        <div className="flex flex-col items-center md:items-start">
+          <div className="bg-white rounded-full w-fit px-2 py-2">
+            {props.icon}
+          </div>
+          <h4 className="font-semibold text-center md:text-left">
+            {props.title}
+          </h4>
+        </div>
+        <p className="text-center md:text-left">{props.content}</p>
+      </div>
+    );
+  }
 }
