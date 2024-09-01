@@ -1,10 +1,8 @@
-
 import CustomNavbar from "@/components/navbar";
 import "./globals.css";
-import { Inter } from "next/font/google";
 import Footer from "@/components/footer";
 import { Providers } from "./providers";
-import { quicksand } from "./fonts";
+import { IntertFont } from "@/fonts";
 
 export const metadata = {
   title: "FUNCOMARE",
@@ -19,11 +17,11 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${quicksand.className} bg-gray-100 h-screen flex flex-col overflow-y-auto`}
+        className={`${IntertFont.className} bg-white min-h-screen flex flex-col`}
       >
         <Providers>
           <CustomNavbar />
-          <div className="flex-auto max-w-[1000px] mx-auto">{children}</div>
+          <main className="max-w-[1000px] grow mx-auto px-4">{children}</main>
           <Footer />
         </Providers>
       </body>

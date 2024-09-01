@@ -17,7 +17,7 @@ export default function CustomNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const links = [
-    { label: "Inicio", href: "/", icon: FaHome },
+    { label: "Inicio", href: "/" },
     { label: "Misión", href: "/mission" },
     { label: "Visión", href: "/vission" },
     { label: "Fundadores", href: "/founders" },
@@ -32,7 +32,7 @@ export default function CustomNavbar() {
         <NavbarBrand>
           <a href="/" className="mr-6">
             <Image
-              className="w-[70px] h-[50px] lg:w-[90px] lg:h-[50px] object-fit"
+              className="w-[70px] h-[50px] lg:w-[70px] lg:h-[50px] object-fit"
               src="/images/logo.png"
               width={100}
               height={50}
@@ -52,7 +52,7 @@ export default function CustomNavbar() {
               ${quicksand.className}  
               `}
               >
-                {link.icon && <link.icon className="inline-block mr-2" />}
+                {link && <link className="inline-block mr-2" />}
                 <p>{link.label}</p>
               </a>
             </NavbarItem>
@@ -70,7 +70,7 @@ export default function CustomNavbar() {
                 flex items-center text-2xl hover:text-blue-400 mr-4 pb-2
                 lg:mt-0 lg:border-b-0 lg:text-lg`}
             >
-              {link.icon && <link.icon className="inline-block mr-2" />}
+              {link && <link className="inline-block mr-2" />}
               <p>{link.label}</p>
             </a>
           </NavbarMenuItem>
