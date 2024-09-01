@@ -5,7 +5,7 @@ import { Providers } from "./providers";
 import { IntertFont } from "@/fonts";
 
 export const metadata = {
-  title: "FUNCOMARE",
+  title: "Funcomare",
   description: "Fundacion construyendo mejores aprendizajes para tu región",
 };
 
@@ -21,7 +21,7 @@ export default function RootLayout({
       >
         <Providers>
           <CustomNavbar />
-          <main className="max-w-[1000px] grow mx-auto px-4">{children}</main>
+          <main className="grow mx-auto">{children}</main>
           <Footer />
         </Providers>
       </body>

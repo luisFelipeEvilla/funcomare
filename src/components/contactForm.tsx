@@ -24,7 +24,7 @@ export default function ContactForm() {
       `;
 
     // Envía un correo electrónico a la dirección de correo electrónico de la organización
-    window.open(`mailto:${EMAIL}?subject=${subject}&body=${body}`);
+    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
     
   };
 

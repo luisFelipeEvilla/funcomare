@@ -30,7 +30,7 @@ export const Footer = () => (
     <div>
       <h6 className="text-white font-bold text-xl">ENLACES RÁPIDOS</h6>
 
-      <ul className="flex-col gap-1 list-disc pl-6s">
+      <ul className="flex-col text-sm pl-6">
         <li>
           <a href="/mission">Misión</a>
         </li>

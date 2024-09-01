@@ -48,8 +48,7 @@ export default function CustomNavbar() {
                 href={link.href}
                 className={`
               border-b text-center flex items-center justify-center text-2xl hover:text-blue-400 mr-4 pb-2
-              lg:mt-0 lg:border-b-0 lg:text-lg
-              ${quicksand.className}  
+              lg:mt-0 lg:border-b-0 lg:text-lg 
               `}
               >
                 {link && <link className="inline-block mr-2" />}
