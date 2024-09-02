@@ -20,7 +20,6 @@ export default function CustomNavbar() {
     { label: "Inicio", href: "/" },
     { label: "Misión", href: "/mission" },
     { label: "Visión", href: "/vission" },
-    { label: "Fundadores", href: "/founders" },
     { label: "Noticias", href: "/news" },
   ];
   return (

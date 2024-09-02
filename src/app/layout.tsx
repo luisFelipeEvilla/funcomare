@@ -16,13 +16,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body
-        className={`${IntertFont.className} bg-white min-h-screen flex flex-col`}
-      >
+      <body className={`${IntertFont.className} bg-white flex flex-col`}>
         <Providers>
-          <CustomNavbar />
-          <main className="grow mx-auto">{children}</main>
-          <Footer />
+          <div className="flex min-h-screen flex-col">
+            <CustomNavbar />
+            <main className="grow mx-auto">{children}</main>
+            <Footer />
+          </div>
         </Providers>
       </body>
     </html>

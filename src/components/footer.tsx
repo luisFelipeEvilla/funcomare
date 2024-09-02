@@ -8,13 +8,11 @@ import {
 } from "react-icons/fa";
 
 const links = [
-  { href: "/", icon: <FaFacebook /> },
-  { href: "/", icon: <FaInstagram /> },
-  { href: "/", icon: <FaTwitter /> },
+  { href: "https://www.instagram.com/funcomare?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", icon: <FaInstagram /> },
 ];
 
 export const Footer = () => (
-  <footer className="shrink-0 flex flex-col-reverse lg:flex-row flex-wrap gap-8 items-center justify-around text-white p-4 bg-[#1e4664]">
+  <footer className="w-screen flex flex-col-reverse lg:flex-row flex-wrap gap-8 items-center justify-around text-white p-4 bg-[#1e4664] self-end">
     <div className="flex flex-col gap-2 ">
       <p className="text-white font-bold text-xl">FUNCOMARE</p>
       <p>Conoce nuestras redes sociales</p>

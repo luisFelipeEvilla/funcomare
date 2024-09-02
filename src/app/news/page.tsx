@@ -1,7 +1,12 @@
 import NewsCard from "@/components/cards/NewsCard"
 import news from "@/data/news"
+import { createClient } from "@/lib/supabase/server"
 
-export default function News() {
+export default async function News() {
+    const supabase = createClient();
+
+    const { data: posts, error  } = await supabase.from("posts").select("*").order("created_at", { ascending: false });
+
     return (
         <main className="grid gap-6 py-4">
             <div className="text-center">
@@ -14,14 +19,14 @@ export default function News() {
             
             <div className="flex flex-wrap justify-center px-auto items-start mx-auto gap-6">
                 {
-                    news.map((n, index) => (
+                    posts?.map((n, index) => (
                         <NewsCard
                             key={index}
                             id={n.id}
-                            title={n.title}
-                            description={n.description}
-                            frontPage={n.frontPage}
-                            createdAt={n.createdAt}
+                            title={n.titulo}
+                            description={n.contenido}
+                            frontPage={n.miniatura || ""}
+                            createdAt={n.created_at}
                         />
                     ))
                 }

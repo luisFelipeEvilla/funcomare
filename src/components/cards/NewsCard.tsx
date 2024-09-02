@@ -5,7 +5,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 type newProp = {
   title: string;
   description: string;
-  frontPage: string;
+  frontPage?: string;
   createdAt: string;
   id: number;
 };

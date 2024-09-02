@@ -19,8 +19,8 @@ export function Hero() {
         </div>
 
         <a
-          href="#"
-          className="bg-blue-600 rounded-md  w-fit px-4 py-2 text-white shadow-md"
+          href="https://www.instagram.com/funcomare?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+          className="bg-blue-600 rounded-md  w-fit px-4 py-2 text-white shadow-md cursor-pointer"
         >
           Cónoce más
         </a>

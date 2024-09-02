@@ -1,40 +1,41 @@
-"use client"
-import news from "@/data/news"
+import NewsCarousel from "@/components/NewsCarousel";
+import { SUPABASE_URL } from "@/config";
+import news from "@/data/news";
+import { createClient } from "@/lib/supabase/server";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-export default function Page({ params }: { params: { id: string } }) {
-    const id = parseInt(params.id);
-    const new_ = news.find(n => n.id === id);
-    if (!new_) return <h1>Noticia no encontrada</h1>
+export default async function Page({ params }: { params: { id: string } }) {
+  const id = parseInt(params.id);
+  const supabase = createClient();
+  const { data: post, error } = await supabase
+    .from("posts")
+    .select("*")
+    .eq("id", id)
+    .single();
+  const { data: images } = await supabase.storage
+    .from("images")
+    .list(`posts/${post?.id}`);
 
-    return (
-        <main className="grid gap-4 px-8 py-4 lg:py-8">
-            <div className="grid gap-3">
-                <h1 className="text-center font-bold text-2xl">{new_.title}</h1>
-                <p className="whitespace-pre-line">{new_.description}</p>
-            </div>
+    console.log(images?.map(
+        (i) =>
+          `${SUPABASE_URL}/storage/v1/object/public/images/posts/${post?.id}/${i.name}`
+      ))
+  return (
+    <main className="grid gap-4 px-8 py-4 lg:py-8 max-w-[1024px] mx-auto">
+      <div className="grid gap-3">
+        <h1 className="text-center font-bold text-2xl">{post?.titulo}</h1>
+        <p className="whitespace-pre-line">{post?.contenido}</p>
+      </div>
 
-
-            <Carousel
-                showThumbs={false}
-                className="shadow-md"
-                autoPlay
-            >
-                {
-                    new_.images.map((img, index) => (
-                        <div key={index}>
-                            <img
-                                key={index}
-                                src={img}
-                                className="object-cover h-[600px] w-full rounded-md"
-                            />
-                            <p></p>
-                        </div>
-                    ))
-                }
-            </Carousel>
-
-        </main>
-    )
+      <NewsCarousel
+        images={
+          images?.map(
+            (i) =>
+              `${SUPABASE_URL}/storage/v1/object/public/images/posts/${post?.id}/${i.name}`
+          ) || []
+        }
+      />
+    </main>
+  );
 }
