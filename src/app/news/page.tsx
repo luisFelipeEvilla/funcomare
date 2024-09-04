@@ -1,8 +1,7 @@
 import NewsCard from "@/components/cards/NewsCard";
+import PostsFilters from "@/components/posts/filters";
 import { Section } from "@/components/Section";
 import { getPosts } from "@/lib/posts";
-import SearchBar from "@/components/SearchBar";
-import OrderBy from "@/components/OrderBy";
 
 export default async function News({
   searchParams,
@@ -29,19 +28,8 @@ export default async function News({
           con la comunidad
         </p>
       </div>
+      <PostsFilters searchParams={searchParams} />
 
-      <div className="flex flex-col-reverse md:flex-row justify-between md:tems-center gap-4 w-full">
-        <SearchBar
-          search={searchParams.search || ""}
-          orderBy="created_at"
-          orderDirection="desc"
-        />
-        <OrderBy
-          orderBy="created_at"
-          orderDirection="desc"
-          search={searchParams.search || ""}
-        />
-      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center px-auto items-start mx-auto gap-6">
         {posts?.map((n, index) => (
           <NewsCard
