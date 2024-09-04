@@ -1,9 +1,10 @@
+import { Bebas } from "@/fonts";
 import Image from "next/image";
 import Link from "next/link";
 export function Hero() {
   return (
     <section className="flex gap-10 py-20 justify-center items-center relative">
-      <img
+      <Image
         width={1920}
         height={1080}
         src="/images/hero/hero-background.jpg"
@@ -15,7 +16,9 @@ export function Hero() {
         bg-white px-6 py-6 rounded-md max-w-[300px] md:max-w-[400px]`}
       >
         <div className="flex text-center  md:text-start flex-col gap-1">
-          <p className={`text-2xl md:text-2xl font-semibold`}>
+          <p
+            className={`${Bebas.className} text-2xl md:text-2xl font-semibold`}
+          >
             Impulsando la cultura y fomentando el desarrollo
           </p>
 
