@@ -17,7 +17,7 @@ export default function DonationModal() {
   const items = [
     {
       name: "Bancolmbia",
-      account: "3005927444",
+      account: "77900003810",
       accountType: "Cuenta de ahorros",
       icon: <img src="/icons/bancolombia.png" className="w-5 h-5" />,
     },
