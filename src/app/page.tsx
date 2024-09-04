@@ -1,10 +1,8 @@
 import NewsCard from "@/components/cards/NewsCard";
-import ContactForm from "@/components/contactForm";
 import { PHONE_NUMBER } from "@/config";
 import news from "@/data/news";
 import { FaPhone } from "react-icons/fa";
 
-import Image from "next/image";
 import { Hero } from "@/components/home/Hero";
 import { Section } from "@/components/Section";
 import SupportUS from "@/components/home/SupportUS";

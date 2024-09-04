@@ -56,8 +56,6 @@ export default function CustomNavbar() {
               </Link>
             </NavbarItem>
           ))}
-
-          <ContactButton />
         </NavbarContent>
       </NavbarContent>
 
@@ -76,9 +74,9 @@ export default function CustomNavbar() {
             </Link>
           </NavbarMenuItem>
         ))}
-
-        <ContactButton />
       </NavbarMenu>
+      <ContactButton />
+
     </Navbar>
   );
 

@@ -15,7 +15,7 @@ const links = [
 ];
 
 export const Footer = () => (
-  <footer className="w-screen   text-white p-4 bg-[#1e4664] self-end">
+  <footer className="w-screen   text-white p-4 bg-[#1e4664] self-end overflow-hidden">
     <div className="max-w-section mx-auto grid grid-cols-3 gap-2 items-center justify-between">
       <div className="flex flex-col gap-2 ">
         <p className="text-white font-bold text-sm md:text-xl">FUNCOMARE</p>
@@ -52,10 +52,13 @@ export const Footer = () => (
 
       <div className="text-xs grid gap-2 max-w-[250px]">
         <h6 className="text-sm md:text-xl font-bold text-white">CONTACTO</h6>
-        <a href={`tel:+57${PHONE_NUMBER}`} className="flex items-center">
+        <a
+          href={`tel:+57${PHONE_NUMBER}`}
+          className="flex items-center break-words"
+        >
           <FaPhone className="mr-2" /> <p>(+57) 301-561-6183</p>
         </a>
-        <a href={`mailto:funcamore@gmail.com`} className="flex items-center">
+        <a href={`mailto:funcamore@gmail.com`} className="flex items-center break-words">
           <FaMailBulk className="mr-2" /> <p>funcomare@gmail.com</p>
         </a>
       </div>

@@ -5,7 +5,8 @@ import { FaGift } from "react-icons/fa";
 import { FaUserPlus } from "react-icons/fa";
 import { Section } from "../Section";
 import { Bebas } from "@/fonts";
-
+import Link from "next/link";
+import DonateModal from "./DonationModal";
 export default function SupportUS() {
   const ABOUT_ICONS_SIZE = 30;
 
@@ -27,26 +28,49 @@ export default function SupportUS() {
           icon={
             <MdOutlineVolunteerActivism size={ABOUT_ICONS_SIZE} color="green" />
           }
-        />
+        >
+          <DonateModal />
+        </Badget>
 
         <Badget
           title="Sé voluntario"
           content="Haz parte de nuestro equipo de voluntarios y ayuda a construir
               un mejor futuro"
           icon={<FaHandSparkles size={ABOUT_ICONS_SIZE} color="blue" />}
-        />
+        >
+          <Link
+            href={"https://forms.gle/eoNPChTFqk66QqwM6"}
+            target="_blank"
+            className="text-blue-500 text-center"
+          >
+            Ver más
+          </Link>
+        </Badget>
 
         <Badget
           title="Conviertete en un representante"
           content="Conviertete en un representante de la fundación en tu región"
           icon={<FaUserPlus size={ABOUT_ICONS_SIZE} color="blue" />}
-        />
+        >
+          <Link
+            href={"https://forms.gle/fSgEP6NEvMvQomRi9"}
+            target="_blank"
+            className="text-blue-500 text-center"
+          >
+            Ver más
+          </Link>
+        </Badget>
       </div>
     </Section>
   );
 }
 
-function Badget(props: { icon: ReactElement; title: string; content: string }) {
+function Badget(props: {
+  icon: ReactElement;
+  title: string;
+  content: string;
+  children?: ReactElement;
+}) {
   return (
     <div className="flex flex-col gap-6 rounded-lg shadow-lg py-6 px-3 border">
       <div className="flex flex-col gap-2 items-center">
@@ -56,6 +80,8 @@ function Badget(props: { icon: ReactElement; title: string; content: string }) {
         <h4 className={`font-bold text-center text-base`}>{props.title}</h4>
       </div>
       <p className="text-center text-sm">{props.content}</p>
+
+      {props.children}
     </div>
   );
 }

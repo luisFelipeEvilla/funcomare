@@ -3,6 +3,7 @@ import "./globals.css";
 import Footer from "@/components/footer";
 import { Providers } from "./providers";
 import { InterFont } from "@/fonts";
+import { Toaster } from "react-hot-toast";
 
 export const metadata = {
   title: "Funcomare",
@@ -24,6 +25,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </Providers>
+        <Toaster />
       </body>
     </html>
   );
