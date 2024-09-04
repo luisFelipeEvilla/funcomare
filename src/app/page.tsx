@@ -9,6 +9,7 @@ import { Hero } from "@/components/home/Hero";
 import { Section } from "@/components/Section";
 import SupportUS from "@/components/home/SupportUS";
 import ContactSection from "@/components/home/contact/Contact";
+import { Bebas } from "@/fonts";
 
 export default function Home() {
   return (
@@ -20,7 +21,9 @@ export default function Home() {
 
       <Section className="gap-4 items-center py-12">
         <div className="bg-white grid gap-2 border text-center rounded-md shadow-md p-4 max-w-[300px] md:max-w-[450px] lg:max-w-[800px]">
-          <h2 className="text-xl font-bold text-center text-blue-500">
+          <h2
+            className={`${Bebas.className} text-2xl font-bold text-center text-blue-500`}
+          >
             ¿Como puedo involucrarme?
           </h2>
           <div className="flex flex-col gap-2 items-center">
@@ -47,7 +50,9 @@ export default function Home() {
       <section className="bg-white">
         <div className="flex flex-col gap-8 py-12">
           <div className="text-center flex flex-col gap-3">
-            <h4 className="text-3xl font-bold">últimas novedades</h4>
+            <h4 className={`${Bebas.className} text-3xl font-bold`}>
+              últimas novedades
+            </h4>
             <p>Echa un vistazo a algunos de nuestos eventos más recientes</p>
           </div>
 

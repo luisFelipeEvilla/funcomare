@@ -4,6 +4,7 @@ import { FaHandSparkles } from "react-icons/fa";
 import { FaGift } from "react-icons/fa";
 import { FaUserPlus } from "react-icons/fa";
 import { Section } from "../Section";
+import { Bebas } from "@/fonts";
 
 export default function SupportUS() {
   const ABOUT_ICONS_SIZE = 30;
@@ -11,10 +12,12 @@ export default function SupportUS() {
   return (
     <Section className="px-4">
       <div className="flex flex-col gap-4 text-center mx-auto">
-        <h4 className="text-xl md:text-3xl font-bold max-w-[400px] text-center">
+        <h4
+          className={`${Bebas.className} text-xl md:text-3xl font-bold max-w-[400px] text-center`}
+        >
           Promoviendo la cultura y la educación en la región
         </h4>
-        <p>Como lo hacemos?</p>
+        <p>¿Como lo hacemos?</p>
       </div>
 
       <div className="flex flex-col md:flex-row gap-10">
