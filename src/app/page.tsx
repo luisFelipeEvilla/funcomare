@@ -1,6 +1,4 @@
-import NewsCard from "@/components/cards/NewsCard";
 import { PHONE_NUMBER } from "@/config";
-import news from "@/data/news";
 import { FaPhone } from "react-icons/fa";
 
 import { Hero } from "@/components/home/Hero";
@@ -8,6 +6,7 @@ import { Section } from "@/components/Section";
 import SupportUS from "@/components/home/SupportUS";
 import ContactSection from "@/components/home/contact/Contact";
 import { Bebas } from "@/fonts";
+import PostsSection from "@/components/home/Posts";
 
 export default function Home() {
   return (
@@ -15,7 +14,7 @@ export default function Home() {
       <Hero />
 
       <SupportUS />
-      <NewsSection />
+      <PostsSection />
 
       <Section className="gap-4 items-center py-12">
         <div className="bg-white grid gap-2 border text-center rounded-md shadow-md p-4 max-w-[300px] md:max-w-[450px] lg:max-w-[800px]">
@@ -42,32 +41,4 @@ export default function Home() {
       <ContactSection />
     </>
   );
-
-  function NewsSection() {
-    return (
-      <section className="bg-white">
-        <div className="flex flex-col gap-8 py-12">
-          <div className="text-center flex flex-col gap-3">
-            <h4 className={`${Bebas.className} text-3xl font-bold`}>
-              últimas novedades
-            </h4>
-            <p>Echa un vistazo a algunos de nuestos eventos más recientes</p>
-          </div>
-
-          <div className="flex flex-col md:flex-row md:flex-wrap items-center justify-center gap-4">
-            {news.map((n, index) => (
-              <NewsCard
-                key={index}
-                id={n.id}
-                title={n.title}
-                description={n.description}
-                frontPage={n.frontPage}
-                createdAt={n.createdAt}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-    );
-  }
 }

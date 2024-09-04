@@ -1,0 +1,19 @@
+import { createClient } from "./supabase/server";
+
+export async function getPosts(filters: {
+  limit?: number;
+  offset?: number;
+  orderBy?: string;
+  orderDirection?: "asc" | "desc";
+}) {
+  const client = createClient();
+  const { data, error } = await client
+    .from("posts")
+    .select("*")
+    .range(filters.offset ?? 0, filters.limit ?? 10)
+    .limit(filters.limit ?? 10) // Default limit to 10 if not provided
+    .order(filters.orderBy ?? "created_at", {
+      ascending: filters.orderDirection === "asc",
+    });
+  return data;
+}
