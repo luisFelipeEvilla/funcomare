@@ -16,11 +16,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className={`${InterFont.className} bg-white flex flex-col`}>
+      <body className={`${InterFont.className} flex flex-col`}>
         <Providers>
           <div className="flex max-w-screen min-h-screen flex-col">
             <CustomNavbar />
-            <main className="grow mx-auto">{children}</main>
+            <main className="grow">{children}</main>
             <Footer />
           </div>
         </Providers>

@@ -15,7 +15,7 @@ export default function Home() {
     <>
       <Hero />
 
-      <SupportUS/>
+      <SupportUS />
       <NewsSection />
 
       <Section className="gap-4 items-center py-12">
@@ -37,8 +37,8 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <ContactSection/>
       </Section>
+      <ContactSection />
     </>
   );
 

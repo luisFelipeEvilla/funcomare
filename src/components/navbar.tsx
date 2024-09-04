@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { FaHome } from "react-icons/fa";
 import {
+  Link,
   Navbar,
   NavbarBrand,
   NavbarContent,
@@ -29,7 +30,7 @@ export default function CustomNavbar() {
         className={`lg:flex justify-between flex-wrap items-center`}
       >
         <NavbarBrand>
-          <a href="/" className="mr-6">
+          <Link href="/" className="mr-6">
             <Image
               className="w-[70px] h-[50px] lg:w-[70px] lg:h-[50px] object-fit"
               src="/images/logo.png"
@@ -37,13 +38,13 @@ export default function CustomNavbar() {
               height={50}
               alt="FUNCOMARE"
             />
-          </a>
+          </Link>
         </NavbarBrand>
 
         <NavbarContent className="hidden lg:flex ">
           {links.map((link, index) => (
             <NavbarItem key={`navbar-item-${index}`}>
-              <a
+              <Link
                 href={link.href}
                 className={`
               border-b text-center flex items-center justify-center text-2xl hover:text-blue-400 mr-4 pb-2
@@ -52,16 +53,18 @@ export default function CustomNavbar() {
               >
                 {link && <link className="inline-block mr-2" />}
                 <p>{link.label}</p>
-              </a>
+              </Link>
             </NavbarItem>
           ))}
+
+          <ContactButton />
         </NavbarContent>
       </NavbarContent>
 
       <NavbarMenu>
         {links.map((link, index) => (
           <NavbarMenuItem key={`menu-item-${index}`}>
-            <a
+            <Link
               href={link.href}
               className={`
                 ${quicksand.className}
@@ -70,10 +73,24 @@ export default function CustomNavbar() {
             >
               {link && <link className="inline-block mr-2" />}
               <p>{link.label}</p>
-            </a>
+            </Link>
           </NavbarMenuItem>
         ))}
+
+        <ContactButton />
       </NavbarMenu>
     </Navbar>
   );
+
+  function ContactButton() {
+    return (
+      <Link
+        href={"#contact"}
+        className="text-sm px-3 md:px-5 py-2 bg-blue-600 text-white 
+                font-bold hover:opacity-95 hover:scale-105 rounded-md"
+      >
+        Contacto
+      </Link>
+    );
+  }
 }

@@ -2,29 +2,30 @@ import "./Contact.css";
 import { cookies } from "next/headers";
 import { Bebas } from "@/fonts";
 import { InterFont } from "@/fonts";
+import Link from "next/link";
 export default async function ContactSection() {
   const items = [
     {
       text: "Escribe un correo",
       icon: "/images/gmail.png",
-      url: "mailto:sales@appworks.com.co",
+      url: "mailto:funcomare@gmail.com",
     },
     {
       text: "Agenda una reunión",
       icon: "/images/calendly.png",
-      url: "https://calendly.com/appworks-sales/30min",
+      url: "https://calendly.com/funcomare/30min",
     },
     {
       text: "Whatsapp",
       icon: "/images/whatsapp.png",
-      url: "https://api.whatsapp.com/send?phone=3045621107",
+      url: "https://api.whatsapp.com/send?phone=3015616183",
     },
   ];
   return (
     <section
       accessKey="contact"
       id="contact"
-      className="max-w-section mx-auto flex flex-col md:flex-row gap-14 justify-between items-center"
+      className="max-w-section mx-auto flex flex-col md:flex-row gap-14 justify-between items-center py-4"
     >
       <div className="flex flex-col items-center gap-8 text-center">
         <h4 className={`${Bebas.className} text-section-title`}>Contactanos</h4>
@@ -58,7 +59,7 @@ export default async function ContactSection() {
     text: string;
   }) {
     return (
-      <a
+      <Link
         className={`border-2 ${InterFont.className} rounded-lg px-4
             py-2 flex items-center gap-4 cursor-pointer hover:scale-105 s
             hadow-lg text-lg hover:bg-[#11ACE2] hover:text-white`}
@@ -67,7 +68,7 @@ export default async function ContactSection() {
       >
         <img src={props.image} className="h-5 w-5" alt={props.alt} />
         <p>{props.text}</p>
-      </a>
+      </Link>
     );
   }
 }
