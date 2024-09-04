@@ -2,7 +2,7 @@ import CustomNavbar from "@/components/navbar";
 import "./globals.css";
 import Footer from "@/components/footer";
 import { Providers } from "./providers";
-import { IntertFont } from "@/fonts";
+import { InterFont } from "@/fonts";
 
 export const metadata = {
   title: "Funcomare",
@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className={`${IntertFont.className} bg-white flex flex-col`}>
+      <body className={`${InterFont.className} bg-white flex flex-col`}>
         <Providers>
           <div className="flex max-w-screen min-h-screen flex-col">
             <CustomNavbar />

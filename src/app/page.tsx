@@ -8,6 +8,7 @@ import Image from "next/image";
 import { Hero } from "@/components/home/Hero";
 import { Section } from "@/components/Section";
 import SupportUS from "@/components/home/SupportUS";
+import ContactSection from "@/components/home/contact/Contact";
 
 export default function Home() {
   return (
@@ -36,7 +37,7 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <ContactForm />
+        <ContactSection/>
       </Section>
     </>
   );
