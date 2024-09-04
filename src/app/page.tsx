@@ -18,7 +18,7 @@ export default function Home() {
       <NewsSection />
 
       <Section className="gap-4 items-center py-12">
-        <div className="bg-white grid gap-2 border rounded-md shadow-md p-4 max-w-[800px]">
+        <div className="bg-white grid gap-2 border text-center rounded-md shadow-md p-4 max-w-[300px] md:max-w-[450px] lg:max-w-[800px]">
           <h2 className="text-xl font-bold text-center text-blue-500">
             ¿Como puedo involucrarme?
           </h2>

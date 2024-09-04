@@ -9,21 +9,15 @@ export default function SupportUS() {
   const ABOUT_ICONS_SIZE = 30;
 
   return (
-    <Section>
+    <Section className="px-4">
       <div className="flex flex-col gap-4 text-center mx-auto">
-        <h4 className="text-3xl font-bold max-w-[400px] text-center">
+        <h4 className="text-xl md:text-3xl font-bold max-w-[400px] text-center">
           Promoviendo la cultura y la educación en la región
         </h4>
         <p>Como lo hacemos?</p>
       </div>
 
       <div className="flex flex-col md:flex-row gap-10">
-        <Badget
-          title="Deja un legado"
-          content="Haz una donación para ayudar a las personas que más lo necesitan"
-          icon={<FaGift size={ABOUT_ICONS_SIZE} color="red" />}
-        />
-
         <Badget
           title="Haz una donación"
           content="Haz una donación para ayudar a las personas que más lo necesitan"
@@ -56,9 +50,7 @@ function Badget(props: { icon: ReactElement; title: string; content: string }) {
         <div className="bg-white rounded-full w-fit px-2 py-2 ">
           {props.icon}
         </div>
-        <h4 className={`font-bold text-center text-base h-[30px] `}>
-          {props.title}
-        </h4>
+        <h4 className={`font-bold text-center text-base`}>{props.title}</h4>
       </div>
       <p className="text-center text-sm">{props.content}</p>
     </div>

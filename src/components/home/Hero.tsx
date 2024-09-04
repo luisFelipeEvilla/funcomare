@@ -1,20 +1,21 @@
 import Image from "next/image";
 export function Hero() {
   return (
-    <section className="flex gap-10 py-20 justify-center items-center  bg-blu-">
+    <section className="flex gap-10 py-20 justify-center items-center">
       <div
-        className={`flex items-start flex-col gap-10 py-8 bg-white px-8 rounded-md max-w-[400px]`}
+        className={`flex items-center md:items-start flex-col gap-10
+        bg-white rounded-md max-w-[300px] md:max-w-[400px]`
+      }
       >
-        <div className="flex text-start flex-col gap-1">
-          <p className={`text-lg  md:text-2xl font-semibold`}>
+        <div className="flex text-center  md:text-start flex-col gap-1">
+          <p className={`text-xl md:text-2xl font-semibold`}>
             Impulsando la cultura y fomentando el desarrollo
           </p>
 
           <p className="text-xs md:text-lg mt-1">
-            Realizamos procesos de formación técnica en programas
-            de educacion inicial, cultural y civicas que permitan
-            el desarrollo de habilidades y competencias en la
-            comunidad.
+            Realizamos procesos de formación técnica en programas de educacion
+            inicial, cultural y civicas que permitan el desarrollo de
+            habilidades y competencias en la comunidad.
           </p>
         </div>
 
@@ -32,7 +33,7 @@ export function Hero() {
         width={500}
         height={500}
         layout="intrinsic"
-        className="my-8 rounded-md w-[400px]"
+        className="hidden md:inline my-8 rounded-md w-[400px]"
       />
     </section>
   );

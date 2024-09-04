@@ -17,7 +17,7 @@ export default async function News() {
                 </p>
             </div>
             
-            <div className="flex flex-wrap justify-center px-auto items-start mx-auto gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center px-auto items-start mx-auto gap-6">
                 {
                     posts?.map((n, index) => (
                         <NewsCard

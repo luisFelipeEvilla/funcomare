@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="es">
       <body className={`${IntertFont.className} bg-white flex flex-col`}>
         <Providers>
-          <div className="flex min-h-screen flex-col">
+          <div className="flex max-w-screen min-h-screen flex-col">
             <CustomNavbar />
             <main className="grow mx-auto">{children}</main>
             <Footer />

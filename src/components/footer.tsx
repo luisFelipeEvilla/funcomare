@@ -8,17 +8,20 @@ import {
 } from "react-icons/fa";
 
 const links = [
-  { href: "https://www.instagram.com/funcomare?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", icon: <FaInstagram /> },
+  {
+    href: "https://www.instagram.com/funcomare?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    icon: <FaInstagram />,
+  },
 ];
 
 export const Footer = () => (
-  <footer className="w-screen flex flex-col-reverse lg:flex-row flex-wrap gap-8 items-center justify-around text-white p-4 bg-[#1e4664] self-end">
+  <footer className="w-screen grid grid-cols-3 gap-2 items-center justify-around text-white p-4 bg-[#1e4664] self-end">
     <div className="flex flex-col gap-2 ">
-      <p className="text-white font-bold text-xl">FUNCOMARE</p>
-      <p>Conoce nuestras redes sociales</p>
+      <p className="text-white font-bold text-sm md:text-xl">FUNCOMARE</p>
+      <p className="text-xs md:text-base">Conoce nuestras redes sociales</p>
       <div className="flex">
         {links.map(({ href, icon }) => (
-          <a key={href} href={href} className="mr-4 text-3xl">
+          <a key={href} href={href} className="mr-4 text-lg md:text-3xl">
             {icon}
           </a>
         ))}
@@ -26,9 +29,9 @@ export const Footer = () => (
     </div>
 
     <div>
-      <h6 className="text-white font-bold text-xl">ENLACES RÁPIDOS</h6>
+      <h6 className="text-white font-bold text-sm md:text-xl">ENLACES RÁPIDOS</h6>
 
-      <ul className="flex-col text-sm pl-6">
+      <ul className="flex-col text-sm">
         <li>
           <a href="/mission">Misión</a>
         </li>
@@ -44,18 +47,14 @@ export const Footer = () => (
       </ul>
     </div>
 
-    <div className="grid gap-2 max-w-[250px]">
-      <h6 className="text-xl font-bold text-white">CONTACTO</h6>
+    <div className="text-xs grid gap-2 max-w-[250px]">
+      <h6 className="text-sm md:text-xl font-bold text-white">CONTACTO</h6>
       <a href={`tel:+57${PHONE_NUMBER}`} className="flex items-center">
         <FaPhone className="mr-2" /> <p>(+57) 301-561-6183</p>
       </a>
       <a href={`mailto:funcamore@gmail.com`} className="flex items-center">
         <FaMailBulk className="mr-2" /> <p>funcomare@gmail.com</p>
       </a>
-      <p>
-        {" "}
-        © {new Date().getFullYear()} FUNCOMARE. Todos los derechos reservados
-      </p>
     </div>
     {/* <div>
       <iframe
